@@ -22,7 +22,7 @@ def add_expense():
 
    def expense_entry():
       try:
-         expense = int(input('Enter the expense amount: '))
+         expense = float(input('Enter the expense amount: '))
       except ValueError:
          print("Invalid input. Please enter a valid expense amount.")
          print(expense_entry())
@@ -34,3 +34,5 @@ def add_expense():
    with open('expenses.csv', mode='a', newline='') as file:
       csv_data= csv.writer(file)
       csv_data.writerow(values)
+
+   print(f'Expense of {exp} on {date} has been added successfully.')
